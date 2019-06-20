@@ -1,0 +1,30 @@
+
+// ===== enable arm===== 
+ sudo su
+ source ../../devel/setup.bash 
+ roslaunch manipulator_h_manager left_arm.launch (for real robot)
+ roslaunch manipulator_h_manager left_arm.launch en_sim:=true (for gazebo)
+
+press "setmode" to init
+
+
+
+
+// ===== ui operation =====
+go to inin pose (x, y, z, r, p, y, fai)=(0, 0.5, -0.4, 0, 0, 0, 0)  //please use p2p
+
+
+
+
+// ===== strategy=====
+package: strategy
+sample code: vision_servo_use_gripper.py
+    - control function
+        *def relative_move(self, mode='p2p', euler=_ORI, pos = _POS, phi=_PHI):
+        *def ikMove(self, mode='line', pos=_POS, euler=_ORI, phi=_PHI):
+
+
+// ===== arm control =====
+package: arm_control
+sample code: arm_control/src/arm_control/arm_task.py
+

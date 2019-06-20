@@ -1,0 +1,61 @@
+==================docker bulid==================
+
+step:
+sudo nvidia-docker run --runtime=nvidia --rm nvidia/cuda nvidia-smi
+
+#error:
+docker: Error response from daemon: OCI runtime create failed: container_linux.go:345: starting container process caused "process_linux.go:424: container init caused \"process_linux.go:407: running prestart hook 1 caused \\\"error running hook: exit status 1, stdout: , stderr: exec command: [/usr/bin/nvidia-container-cli --load-kmods configure --ldconfig=@/sbin/ldconfig.real --device=all --compute --utility --require=cuda>=10.1 brand=tesla,driver>=384,driver<385 brand=tesla,driver>=396,driver<397 brand=tesla,driver>=410,driver<411 --pid=30896 /var/lib/docker/overlay2/073353c546bebdc6d5a4bb4de921a3fd72607d95250f55503c8afecd52295e9a/merged]\\\\nnvidia-container-cli: requirement error: unsatisfied condition: brand = tesla\\\\n\\\"\"": unknown.
+
+
+fixed:
+XXXX
+
+
+==================AI_Bot bulid==================
+step: catkin_make
+#error:
+  Could not find a package configuration file provided by "serial" with any
+@fixed:
+  apt-get install ros-kinetic-serial
+
+#error:
+  Could not find a package configuration file provided by "roslint" with any
+@fixed:
+  apt-get install ros-kinetic-roslint
+
+#error:
+  fatal error: modbus/modbus.h: No such file or directory
+@fixed:
+  follow readme.md from github "wrs2018/linear_motion/"
+  step:./autogen.sh
+  #error:
+    --------------------------
+    Running autoreconf failed.
+    --------------------------
+  @fixed:
+    apt-get install libtool
+
+#error:
+ fatal error: flycapture/FlyCapture2.h: No such file or directory
+@fixed:
+ https://github.com/tkuwheel/TKURoboSot/blob/vision/pointgrey_camera_driver/README.md
+
+#error:
+  ResourceNotFound: xacro
+@fixed:
+  apt-get install ros-kinetic-xacro
+
+====for build=====
+need package:
+apt-get install autoconf\
+ ros-kinetic-libmodbus\
+ ros-kinetic-qt-build\
+ ros-kinetic-rosbridge-server\
+ ros-kinetic-rosserial-python ros-kinetic-rosserial-arduino
+ ros-kinetic-serial\
+ ros-kinetic-roslint
+
+apt-get install libraw1394-11 libgtkmm-2.4-1v5 libglademm-2.4-1v5 libgtkglextmm-x11-1.2-dev libgtkglextmm-x11-1.2 libusb-1.0-0 libglademm-2.4-dev
+
+need package:
+ apt-get install ros-kinetic-controller-manager ros-kinetic-controller-manager-msgs ros-kinetic-robot-state-publisher ros-kinetic-position-controllers ros-kinetic-velocity-controllers ros-kinetic-effort-controllers -y
