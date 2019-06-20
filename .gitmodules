@@ -1,0 +1,6 @@
+[submodule "AI_Bot"]
+	path = AI_Bot
+	url = https://github.com/frinklai/AI_Bot.git
+[submodule "dope"]
+	path = dope
+	url = https://github.com/wukaikao/Deep_Object_Pose.git
