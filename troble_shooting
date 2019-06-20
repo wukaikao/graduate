@@ -27,6 +27,7 @@ step: catkin_make
   fatal error: modbus/modbus.h: No such file or directory
 @fixed:
   follow readme.md from github "wrs2018/linear_motion/"
+  https://github.com/tkuiclab/wrs2018/tree/master/linear_motion
   step:./autogen.sh
   #error:
     --------------------------
@@ -51,11 +52,22 @@ apt-get install autoconf\
  ros-kinetic-libmodbus\
  ros-kinetic-qt-build\
  ros-kinetic-rosbridge-server\
- ros-kinetic-rosserial-python ros-kinetic-rosserial-arduino
+ ros-kinetic-rosserial-python ros-kinetic-rosserial-arduino\
  ros-kinetic-serial\
- ros-kinetic-roslint
+ ros-kinetic-roslint -y
 
-apt-get install libraw1394-11 libgtkmm-2.4-1v5 libglademm-2.4-1v5 libgtkglextmm-x11-1.2-dev libgtkglextmm-x11-1.2 libusb-1.0-0 libglademm-2.4-dev
+apt-get install libraw1394-11 libgtkmm-2.4-1v5 libglademm-2.4-1v5 libgtkglextmm-x11-1.2-dev libgtkglextmm-x11-1.2 libusb-1.0-0 libglademm-2.4-dev -y
+
+# following from https://github.com/tkuiclab/wrs2018
+# install nvm, nodejs, npm
+$ git clone git://github.com/creationix/nvm.git ~/.nvm
+$ echo ". ~/.nvm/nvm.sh" >> ~/.bashrc
+$ source ~/.bashrc
+$ nvm install 8.12.0
+$ nvm alias default 8.12.0
+$ curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.33.2/install.sh | bash 
+
+
 
 need package:
  apt-get install ros-kinetic-controller-manager ros-kinetic-controller-manager-msgs ros-kinetic-robot-state-publisher ros-kinetic-position-controllers ros-kinetic-velocity-controllers ros-kinetic-effort-controllers -y
