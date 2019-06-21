@@ -60,12 +60,12 @@ apt-get install libraw1394-11 libgtkmm-2.4-1v5 libglademm-2.4-1v5 libgtkglextmm-
 
 # following from https://github.com/tkuiclab/wrs2018
 # install nvm, nodejs, npm
-$ git clone git://github.com/creationix/nvm.git ~/.nvm
-$ echo ". ~/.nvm/nvm.sh" >> ~/.bashrc
-$ source ~/.bashrc
-$ nvm install 8.12.0
-$ nvm alias default 8.12.0
-$ curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.33.2/install.sh | bash 
+git clone git://github.com/creationix/nvm.git ~/.nvm &&
+echo ". ~/.nvm/nvm.sh" >> ~/.bashrc &&
+source ~/.bashrc &&
+nvm install 8.12.0 &&
+nvm alias default 8.12.0 &&
+curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.33.2/install.sh | bash 
 
 
 
