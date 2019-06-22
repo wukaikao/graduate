@@ -71,3 +71,12 @@ curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.33.2/install.sh | b
 
 need package:
  apt-get install ros-kinetic-controller-manager ros-kinetic-controller-manager-msgs ros-kinetic-robot-state-publisher ros-kinetic-position-controllers ros-kinetic-velocity-controllers ros-kinetic-effort-controllers -y
+
+git clone https://github.com/stephane/libmodbus.git &&
+cd libmodbus &&
+sudo apt-get install autoconf &&
+./autogen.sh &&
+./configure &&
+make &&
+sudo make install
+
